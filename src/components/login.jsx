@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 const Login = ({ setUser, setUserRole }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("user"); // default role
+  const [role, setRole] = useState("user"); 
   const [isNewUser, setIsNewUser] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -37,8 +37,7 @@ const Login = ({ setUser, setUserRole }) => {
         const q = query(usersRef, where("uid", "==", userCredential.user.uid));
         const querySnapshot = await getDocs(q);
       }
-    //   setUser(userCredential.user);
-    //   setUserRole(role);
+   
     if (!querySnapshot.empty) {
         const userData = querySnapshot.docs[0].data();
         setUserRole(userData.role);
