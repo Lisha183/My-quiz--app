@@ -33,7 +33,7 @@ const login = ({ setUser, setUserRole }) => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100" >
        <div className="flex w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden">
 
-        {/* Left side: Welcome message */}
+       
         <div className="hidden lg:block w-1/2 bg-blue-500 text-white p-8">
           <h2 className="text-4xl font-semibold">Welcome Back!</h2>
           <p className="mt-4 text-lg">Please log in to continue to your dashboard.</p>
