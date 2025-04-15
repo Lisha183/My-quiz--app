@@ -8,7 +8,7 @@ import Categories from "./components/Categories";
 import AdminDashboard from './components/AdminDashboard';
 import InstructorDashboard from './components/InstructorDashboard';
 import UserDashboard from './components/UserDashboard';
-import Login from "./components/login";
+import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import QuizForm from "./components/QuizForm";
 import QuizzesPage from "./components/QuizzesPage";
