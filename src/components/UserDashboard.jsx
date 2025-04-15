@@ -6,19 +6,18 @@ import Categories from "./Categories";
 import Leaderboard from "./Leaderboard";
 import { Link } from 'react-router-dom';
 
-
 const UserDashboard = ({ user }) => {
   const { profile } = useUserProfile();
   const [currentPage, setCurrentPage] = useState("dashboard");
 
   return (
-    <div className="min-h-screen flex bg-[#f4f6fb] font-sans">
+    <div className="min-h-screen flex flex-col sm:flex-row bg-[#f4f6fb] font-sans">
 
-      <aside className="w-72 bg-[#6a5acd] text-white p-6 flex flex-col justify-between rounded-tr-3xl rounded-br-3xl shadow-lg">
+
+      <aside className="w-full sm:w-72 bg-[#6a5acd] text-white p-6 flex flex-col justify-between rounded-tr-3xl rounded-br-3xl shadow-lg">
         <div>
           <h1 className="text-2xl font-bold mb-8 text-center">QuizzyWhiz!</h1>
 
-  
           <div className="mb-6 flex flex-col items-center">
             {profile && profile.profilePictureUrl ? (
               <button onClick={() => setCurrentPage("profile")} className="mb-2">
@@ -70,7 +69,6 @@ const UserDashboard = ({ user }) => {
             )}
           </div>
 
-         
           <nav className="space-y-4">
             <p
               onClick={() => setCurrentPage("dashboard")}
@@ -85,14 +83,13 @@ const UserDashboard = ({ user }) => {
               Quiz History
             </p>
             <div className="flex justify-center">
-  <Link
-    to="/"
-    className="text-center cursor-pointer text-white text-lg hover:text-[#34d399] hover:underline transition-all duration-200"
-  >
-    Home
-  </Link>
-</div>
-
+              <Link
+                to="/"
+                className="text-center cursor-pointer text-white text-lg hover:text-[#34d399] hover:underline transition-all duration-200"
+              >
+                Home
+              </Link>
+            </div>
 
             <p
               onClick={() => setCurrentPage("categories")}
@@ -100,18 +97,16 @@ const UserDashboard = ({ user }) => {
             >
               Browse Categories
             </p>
-            
           </nav>
         </div>
 
-       <div className="mt-10">
+        <div className="mt-10">
           <img src="brain.png" alt="logo" className="w-16 mx-auto" />
         </div>
       </aside>
 
-  
-      <div className="flex-1 p-10 overflow-auto">
-      
+ 
+      <div className="flex-1 p-6 sm:p-10 overflow-auto">
         <header className="flex justify-between items-center mb-10 bg-white rounded-xl p-6 shadow-sm border">
           <h1 className="text-2xl font-bold text-gray-800">Welcome to Your Dashboard!</h1>
           <div className="flex items-center space-x-4">
@@ -122,17 +117,15 @@ const UserDashboard = ({ user }) => {
           </div>
         </header>
 
-    
         <main className="bg-white p-6 rounded-xl shadow-md border">
           {currentPage === "dashboard" && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-2xl p-6 shadow-md border">
-              <img
-          src="q.jpg"
-          alt="Leaderboard Icon"
-           className="w-full h-48 object-cover transition-all duration-300 transform hover:scale-105"
-        />
-        <br />
+                <img
+                  src="q.jpg"
+                  alt="Leaderboard Icon"
+                  className="w-full h-48 object-cover transition-all duration-300 transform hover:scale-105"
+                />
                 <h2 className="text-xl font-semibold text-[#6a5acd] mb-4">Start a New Quiz</h2>
                 <button
                   onClick={() => setCurrentPage("categories")}
@@ -141,39 +134,28 @@ const UserDashboard = ({ user }) => {
                   Browse Categories
                 </button>
               </div>
-           
-        
-         
-           
-              
-                <div className="bg-white rounded-2xl p-6 shadow-md border">
+
+              <div className="bg-white rounded-2xl p-6 shadow-md border">
                 <img
-          src="leader.avif"
-          alt="Leaderboard Icon"
-                     className="w-full h-48 object-cover transition-all duration-300 transform hover:scale-105"
-        />
-        <br />
-                  <h2 className="text-xl font-semibold text-[#6a5acd] mb-4">Top Scores</h2>
-                  <button
-                    onClick={() => setCurrentPage("leaderboard")}
-                     className="inline-block bg-[#6a5acd] text-white px-6 py-2 rounded-lg hover:bg-[#5c50cc] transition"
-                  >
-                   View Leaderboard
-                  </button>
-                </div>
-                </div>
+                  src="leader.avif"
+                  alt="Leaderboard Icon"
+                  className="w-full h-48 object-cover transition-all duration-300 transform hover:scale-105"
+                />
+                <h2 className="text-xl font-semibold text-[#6a5acd] mb-4">Top Scores</h2>
+                <button
+                  onClick={() => setCurrentPage("leaderboard")}
+                  className="inline-block bg-[#6a5acd] text-white px-6 py-2 rounded-lg hover:bg-[#5c50cc] transition"
+                >
+                  View Leaderboard
+                </button>
+              </div>
+            </div>
           )}
-              
-            
-       
 
           {currentPage === "profile" && <Profile />}
           {currentPage === "quiz-history" && <QuizHistory />}
           {currentPage === "categories" && <Categories />}
           {currentPage === "leaderboard" && <Leaderboard />}
-
-        
-
         </main>
       </div>
     </div>

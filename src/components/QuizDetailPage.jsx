@@ -542,188 +542,138 @@ if (quizCompleted) {
     };
 
 return (
-  <div>
 
-    <div className="absolute bottom-[-100px] right-[-100px] z-0">
-      <svg
-        className="animate-float w-[400px] h-[400px] opacity-60"
-        viewBox="0 0 200 200"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <linearGradient id="pinkPurple" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style={{ stopColor: "#f472b6", stopOpacity: 1 }} />
-            <stop offset="100%" style={{ stopColor: "#c084fc", stopOpacity: 1 }} />
-          </linearGradient>
-        </defs>
-        <path
-          fill="url(#pinkPurple)"
-          d="M43.5,-75.5C55.1,-67.6,62.5,-54.4,68.5,-41.3C74.5,-28.2,79.1,-14.1,75.4,-2.1C71.6,9.8,59.4,19.6,51.5,29.3C43.5,39.1,39.8,48.8,32.4,60.7C25,72.6,12.5,86.6,-1.6,89C-15.8,91.3,-31.5,82.1,-43.4,71.2C-55.4,60.3,-63.6,47.6,-70.7,34C-77.7,20.3,-83.6,5.7,-81.5,-7.7C-79.4,-21.1,-69.4,-33.2,-58.6,-44.5C-47.9,-55.8,-36.3,-66.4,-23,-73.7C-9.6,-80.9,5.4,-84.9,20.6,-84.4C35.9,-83.9,51.4,-79.4,43.5,-75.5Z"
-          transform="translate(100 100)"
-        />
-      </svg>
-    </div>
+<div className="relative w-full min-h-screen px-4 sm:px-6 md:px-8 py-10 bg-gradient-to-br from-purple-100 to-pink-200">
+      {/* Floating Background Blobs */}
+      <div className="absolute bottom-[-100px] right-[-100px] z-0">
+        <svg className="animate-float w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] opacity-60" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="pinkPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#f472b6', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#c084fc', stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
+          <path fill="url(#pinkPurple)" d="M43.5,-75.5C55.1,-67.6,62.5,-54.4,68.5,-41.3C74.5,-28.2,79.1,-14.1,75.4,-2.1C71.6,9.8,59.4,19.6,51.5,29.3C43.5,39.1,39.8,48.8,32.4,60.7C25,72.6,12.5,86.6,-1.6,89C-15.8,91.3,-31.5,82.1,-43.4,71.2C-55.4,60.3,-63.6,47.6,-70.7,34C-77.7,20.3,-83.6,5.7,-81.5,-7.7C-79.4,-21.1,-69.4,-33.2,-58.6,-44.5C-47.9,-55.8,-36.3,-66.4,-23,-73.7C-9.6,-80.9,5.4,-84.9,20.6,-84.4C35.9,-83.9,51.4,-79.4,43.5,-75.5Z" transform="translate(100 100)" />
+        </svg>
+      </div>
 
+      <div className="absolute top-[-100px] left-[-100px] z-0">
+        <svg className="animate-float w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] opacity-60" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lightPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#a3bffa', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#d4b1fc', stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
+          <path fill="url(#lightPurple)" d="M43.5,-75.5C55.1,-67.6,62.5,-54.4,68.5,-41.3C74.5,-28.2,79.1,-14.1,75.4,-2.1C71.6,9.8,59.4,19.6,51.5,29.3C43.5,39.1,39.8,48.8,32.4,60.7C25,72.6,12.5,86.6,-1.6,89C-15.8,91.3,-31.5,82.1,-43.4,71.2C-55.4,60.3,-63.6,47.6,-70.7,34C-77.7,20.3,-83.6,5.7,-81.5,-7.7C-79.4,-21.1,-69.4,-33.2,-58.6,-44.5C-47.9,-55.8,-36.3,-66.4,-23,-73.7C-9.6,-80.9,5.4,-84.9,20.6,-84.4C35.9,-83.9,51.4,-79.4,43.5,-75.5Z" transform="translate(100 100)" />
+        </svg>
+      </div>
 
-    <div className="absolute top-[-100px] left-[-100px] z-0">
-      <svg
-        className="animate-float w-[400px] h-[400px] opacity-60"
-        viewBox="0 0 200 200"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <linearGradient id="lightPurple" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style={{ stopColor: "#a3bffa", stopOpacity: 1 }} />
-            <stop offset="100%" style={{ stopColor: "#d4b1fc", stopOpacity: 1 }} />
-          </linearGradient>
-        </defs>
-        <path
-          fill="url(#lightPurple)"
-          d="M43.5,-75.5C55.1,-67.6,62.5,-54.4,68.5,-41.3C74.5,-28.2,79.1,-14.1,75.4,-2.1C71.6,9.8,59.4,19.6,51.5,29.3C43.5,39.1,39.8,48.8,32.4,60.7C25,72.6,12.5,86.6,-1.6,89C-15.8,91.3,-31.5,82.1,-43.4,71.2C-55.4,60.3,-63.6,47.6,-70.7,34C-77.7,20.3,-83.6,5.7,-81.5,-7.7C-79.4,-21.1,-69.4,-33.2,-58.6,-44.5C-47.9,-55.8,-36.3,-66.4,-23,-73.7C-9.6,-80.9,5.4,-84.9,20.6,-84.4C35.9,-83.9,51.4,-79.4,43.5,-75.5Z"
-          transform="translate(100 100)"
-        />
-      </svg>
-    </div>
+      {/* Main Quiz Container */}
+      <div className="relative z-10 max-w-2xl mx-auto p-6 sm:p-8 bg-white rounded-xl shadow-2xl text-center">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">
+          {categoryId} Quiz ({difficulty || "All Levels"})
+        </h2>
+        <p className="text-gray-600 mb-6 text-sm sm:text-base">
+          Welcome, <span className="font-semibold text-green-600">{username}</span>
+        </p>
 
+        <div className="mb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+          {ProgressBar && <ProgressBar current={currentQuestionIndex + 1} total={questions.length} />}
 
-    <div className="max-w-md mx-auto mt-8 p-6 bg-gradient-to-br from-pink-200 to-purple-600 rounded-md shadow-lg text-center">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-        {categoryId} Quiz ({difficulty || "All Levels"})
-      </h2>
-      <p className="text-gray-600 mb-6">Welcome, <span className="font-semibold text-green-600">{username}</span></p>
-
-      <div className="mb-6 flex justify-between items-center">
-        {ProgressBar && (
-          <ProgressBar
-            current={currentQuestionIndex + 1}
-            total={questions.length}
-          />
-        )}
-
-        {canSkip && (
-          <div className="mt-3 flex justify-end">
+          {canSkip && (
             <button
               onClick={handleSkipQuestion}
-              className="px-3 py-1 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition duration-300 text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-300"
+              className="px-3 py-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-300"
             >
               <FontAwesomeIcon icon={faForward} className="mr-2" /> Skip
             </button>
+          )}
+        </div>
+
+        <div className="mb-6">
+          <p className="text-sm sm:text-base text-gray-700 mb-1">
+            Question <span className="font-bold text-blue-500">{currentQuestionIndex + 1}</span> of <span className="font-bold text-green-500">{questions.length}</span>
+          </p>
+          <p className="text-sm sm:text-base text-gray-700 mb-2">
+            Time Left: <span className="font-bold text-red-600">{timeLeft}</span> seconds
+          </p>
+          <p className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
+            {currentQuestion?.question}
+          </p>
+
+          {difficulty === 'hard' && currentQuestion?.options?.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswerSelection(option)}
+              className={`w-full px-6 py-3 rounded-full text-white transition duration-300 shadow-md mb-2 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400 ${
+                selectedAnswer === option
+                  ? String(selectedAnswer).trim().toLowerCase() === String(currentQuestion?.correctAnswer).trim().toLowerCase()
+                    ? 'bg-green-600 hover:bg-green-700'
+                    : 'bg-red-600 hover:bg-red-700'
+                  : 'bg-indigo-500 hover:bg-indigo-600'
+              }`}
+              disabled={showFeedback}
+            >
+              {option}
+            </button>
+          ))}
+
+          {(difficulty === 'medium' || difficulty === 'easy') && (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleAnswerSelection(userInput.trim());
+              }}
+              className="flex flex-col gap-4"
+            >
+              <input
+                type="text"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                className="px-4 py-3 border border-gray-400 rounded-full shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-400 font-medium"
+                placeholder="Type your answer"
+                disabled={showFeedback}
+              />
+              <button
+                type="submit"
+                className={`px-6 py-3 text-white rounded-full transition duration-300 shadow-md focus:outline-none focus:ring-2 font-semibold ${
+                  difficulty === 'easy' ? 'bg-green-500 hover:bg-green-600 focus:ring-green-400' : 'bg-indigo-500 hover:bg-indigo-600 focus:ring-indigo-400'
+                }`}
+                disabled={showFeedback}
+              >
+                Submit Answer
+              </button>
+            </form>
+          )}
+        </div>
+
+        {showFeedback && (
+          <div className="mb-4 p-4 rounded-md shadow-inner bg-gray-100">
+            <p
+              className={`text-lg font-semibold ${
+                String(selectedAnswer).trim().toLowerCase() === String(currentQuestion?.correctAnswer).trim().toLowerCase()
+                  ? 'text-green-600'
+                  : 'text-red-600'
+              }`}
+            >
+              {String(selectedAnswer).trim().toLowerCase() === String(currentQuestion?.correctAnswer).trim().toLowerCase()
+                ? (<><FontAwesomeIcon icon={faCheck} className="mr-2" /> Correct!</>)
+                : (<><FontAwesomeIcon icon={faTimes} className="mr-2" /> Incorrect! Correct answer: <span className="font-bold text-green-600">{currentQuestion?.correctAnswer}</span></>)}
+            </p>
+            {questions.length > currentQuestionIndex + 1 && (
+              <button
+                onClick={handleNextQuestion}
+                className="mt-4 px-6 py-3 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 font-semibold"
+              >
+                Next Question <FontAwesomeIcon icon={faStepForward} className="ml-2" />
+              </button>
+            )}
           </div>
         )}
       </div>
-
-      <div className="mb-6">
-        <p className="text-lg font-medium text-gray-700 mb-1">
-          Question <span className="font-bold text-blue-500">{currentQuestionIndex + 1}</span> of <span className="font-bold text-green-500">{questions.length}</span>
-        </p>
-        <p className="text-lg font-medium text-gray-700 mb-2">
-          Time Left: <span className="font-bold text-red-600">{timeLeft}</span> seconds
-        </p>
-        <p className="text-xl font-semibold text-gray-800 mb-4">
-          {currentQuestion?.question}
-        </p>
-
-
-        {difficulty === "hard" && currentQuestion?.options?.map((option, index) => (
-          <button
-            key={index}
-            onClick={() => handleAnswerSelection(option)}
-            className={`w-full px-6 py-3 rounded-full text-white transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2 font-semibold ${
-              selectedAnswer === option
-                ? String(selectedAnswer).trim().toLowerCase() === String(currentQuestion?.correctAnswer).trim().toLowerCase()
-                  ? "bg-green-600 hover:bg-green-700"
-                  : "bg-red-600 hover:bg-red-700"
-                : "bg-indigo-500 hover:bg-indigo-600"
-            }`}
-            disabled={showFeedback}
-          >
-            {option}
-          </button>
-        ))}
-
-        {difficulty === "medium" && (
-  <form
-    onSubmit={(e) => {
-      e.preventDefault();
-      handleAnswerSelection(userInput.trim());
-    }}
-    className="flex flex-col gap-4"
-  >
-    <input
-      type="text"
-      value={userInput}
-      onChange={(e) => setUserInput(e.target.value)}
-      className="px-4 py-3 border border-gray-400 rounded-full shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-400 font-medium"
-      placeholder="Type your answer"
-      disabled={showFeedback}
-    />
-    <button
-      type="submit"
-      className="px-6 py-3 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 font-semibold"
-      disabled={showFeedback}
-    >
-      Submit Answer
-    </button>
-  </form>
-)}
-
-
-      
-        {difficulty === "easy" && (
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleAnswerSelection(userInput.trim());
-            }}
-            className="flex flex-col gap-4"
-          >
-            <input
-              type="text"
-              value={userInput}
-              onChange={(e) => setUserInput(e.target.value)}
-              className="px-4 py-3 border border-gray-400 rounded-full shadow-inner focus:outline-none focus:ring-2 focus:ring-green-400 font-medium"
-              placeholder="Type your answer"
-              disabled={showFeedback}
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-green-400 font-semibold"
-              disabled={showFeedback}
-            >
-              Submit Answer
-            </button>
-          </form>
-        )}
-      </div>
-
-      {showFeedback && (
-        <div className="mb-4 p-4 rounded-md shadow-inner bg-gray-100">
-          <p
-            className={`text-lg font-semibold ${
-              String(selectedAnswer).trim().toLowerCase() === String(currentQuestion?.correctAnswer).trim().toLowerCase()
-                ? "text-green-600"
-                : "text-red-600"
-            }`}
-          >
-            {String(selectedAnswer).trim().toLowerCase() === String(currentQuestion?.correctAnswer).trim().toLowerCase()
-              ? <><FontAwesomeIcon icon={faCheck} className="mr-2" /> Correct!</>
-              : <><FontAwesomeIcon icon={faTimes} className="mr-2" /> Incorrect! Correct answer: <span className="font-bold text-green-600">{currentQuestion?.correctAnswer}</span></>}
-          </p>
-          {questions.length > currentQuestionIndex + 1 && (
-            <button
-              onClick={handleNextQuestion}
-              className="mt-4 px-6 py-3 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 font-semibold"
-            >
-              Next Question <FontAwesomeIcon icon={faStepForward} className="ml-2" />
-            </button>
-          )}
-          
-        </div>
-      )}
     </div>
-  </div>
-);
-
+  );
 };
 
 export default QuizDetailPage;

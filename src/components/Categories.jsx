@@ -66,7 +66,11 @@ const QuizCategoriesPage = () => {
     firebaseCategories.forEach(cat => {
       const existingStaticCategory = initialCategories.find(sc => sc.id.toLowerCase() === cat.toLowerCase());
       if (!existingStaticCategory) {
-        mergedCategories.push({ id: cat, title: cat, description: 'Explore community-created quizzes in this category.' });
+        mergedCategories.push({
+          id: cat,
+          title: cat,
+          description: 'Explore community-created quizzes in this category.',
+        });
       }
     });
 
@@ -74,7 +78,6 @@ const QuizCategoriesPage = () => {
   }, [firebaseCategories]);
 
   const handleCategoryClick = (categoryId) => {
-   
     if (
       (categoryId === 'Medium' || categoryId === 'Hard') && 
       !currentUser
@@ -94,12 +97,12 @@ const QuizCategoriesPage = () => {
       <div className="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-500 flex flex-col justify-center items-center p-8">
         <button
           onClick={handleGoBack}
-          className="absolute top-4 left-4 bg-white text-indigo-600 py-2 px-4 rounded-full hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-300"
+          className="absolute top-4 left-4 bg-white text-indigo-600 py-2 px-4 rounded-full hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-300 text-sm sm:text-base"
         >
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2" /> Back
         </button>
         <FontAwesomeIcon icon={faSpinner} className="text-white text-5xl animate-spin mb-6" />
-        <h2 className="text-3xl font-bold text-white">Loading Categories...</h2>
+        <h2 className="text-3xl font-bold text-white text-center">Loading Categories...</h2>
       </div>
     );
   }
@@ -109,28 +112,32 @@ const QuizCategoriesPage = () => {
       <div className="min-h-screen bg-gradient-to-br from-red-400 to-orange-400 flex flex-col justify-center items-center p-8">
         <button
           onClick={handleGoBack}
-          className="absolute top-4 left-4 bg-white text-red-600 py-2 px-4 rounded-full hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300"
+          className="absolute top-4 left-4 bg-white text-red-600 py-2 px-4 rounded-full hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 text-sm sm:text-base"
         >
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2" /> Back
         </button>
-        <h2 className="text-4xl font-bold text-white mb-6">Uh Oh!</h2>
-        <p className="text-red-100 text-lg mb-4">Failed to load quiz categories: {error}</p>
-        <p className="text-white font-semibold">{error}</p>
+        <h2 className="text-4xl font-bold text-white mb-6 text-center">Uh Oh!</h2>
+        <p className="text-red-100 text-lg mb-4 text-center">Failed to load quiz categories: {error}</p>
+        <p className="text-white font-semibold text-center">{error}</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-500 p-10 relative">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-500 px-4 sm:px-6 lg:px-10 py-10 relative">
       <button
         onClick={handleGoBack}
-        className="absolute top-4 left-4 bg-white text-indigo-600 py-2 px-4 rounded-full hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-300"
+        className="absolute top-4 left-4 bg-white text-indigo-600 py-2 px-4 rounded-full hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-300 text-sm sm:text-base"
       >
         <FontAwesomeIcon icon={faArrowLeft} className="mr-2" /> Back
       </button>
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold text-white mb-8">Pick Your Brain Power!</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-10">
+          Pick Your Brain Power!
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {allCategories.map((category) => {
             const lowerTitle = category.title.toLowerCase();
             const restricted =
@@ -139,20 +146,20 @@ const QuizCategoriesPage = () => {
             return (
               <div
                 key={category.id}
-                className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 cursor-pointer flex flex-col justify-center items-center p-8"
+                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 cursor-pointer flex flex-col justify-between items-center p-6 sm:p-8 text-center"
                 onClick={() => handleCategoryClick(category.id)}
               >
-                <div className="text-5xl text-indigo-600 mb-4">
+                <div className="text-4xl sm:text-5xl text-indigo-600 mb-4">
                   <FontAwesomeIcon icon={categoryIcons[category.id] || faBook} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
                   {category.title}
                 </h3>
-                <p className="text-gray-600 text-sm text-center line-clamp-2">
+                <p className="text-gray-600 text-sm sm:text-base mb-4 line-clamp-2">
                   {category.description}
                 </p>
                 <button
-                  className={`mt-4 px-4 py-2 rounded-full focus:outline-none focus:ring-2 ${
+                  className={`mt-auto px-4 py-2 rounded-full w-full sm:w-auto text-sm sm:text-base focus:outline-none focus:ring-2 ${
                     restricted
                       ? 'bg-gray-400 text-white cursor-not-allowed'
                       : 'bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-400'

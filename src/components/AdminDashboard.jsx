@@ -10,9 +10,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { startOfDay, endOfDay } from "date-fns";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import Categories from "./Categories"; 
-
 import Leaderboard from "./Leaderboard";
 import Profile from "./UserProfile"; 
+
 const AdminDashboard = () => {
   const { profile } = useUserProfile();  
   const [currentPage, setCurrentPage] = useState("home");
@@ -105,12 +105,12 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen flex bg-[#f4f6fb] font-sans">
-      <aside className="w-72 bg-[#6a5acd] text-white p-6 flex flex-col justify-between rounded-tr-3xl rounded-br-3xl shadow-lg">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-[#f4f6fb] font-sans">
+      <aside className="lg:w-72 w-full bg-[#6a5acd] text-white p-6 flex flex-col justify-between rounded-tr-3xl rounded-br-3xl shadow-lg">
         <div>
           <h1 className="text-center text-2xl font-bold mb-8">Quizzy Whiz</h1>
 
-<div className="mb-6 flex flex-col items-center">
+          <div className="mb-6 flex flex-col items-center">
             {profile && profile.profilePictureUrl ? (
               <button onClick={() => setCurrentPage("profile")} className="mb-2">
                 <img
@@ -160,34 +160,25 @@ const AdminDashboard = () => {
               </button>
             )}
           </div>
+          
           <nav className="space-y-4">
-           <p onClick={() => setCurrentPage("dashboard")} className="cursor-pointer text-lg text-center hover:text-[#34d399] hover:underline transition-all duration-200">
-                         Dashboard
-                       </p>
-                       <p onClick={() => setCurrentPage("manage-quizzes")} className="cursor-pointer text-lg text-center hover:text-[#34d399] hover:underline transition-all duration-200">
-                         Manage Quizzes
-                       </p>
-                       <p
-              onClick={() => setCurrentPage("categories")}
-              className="text-center cursor-pointer text-white text-lg hover:text-[#34d399] hover:underline transition-all duration-200"
-            >
+            <p onClick={() => setCurrentPage("dashboard")} className="cursor-pointer text-lg text-center hover:text-[#34d399] hover:underline transition-all duration-200">
+              Dashboard
+            </p>
+            <p onClick={() => setCurrentPage("manage-quizzes")} className="cursor-pointer text-lg text-center hover:text-[#34d399] hover:underline transition-all duration-200">
+              Manage Quizzes
+            </p>
+            <p onClick={() => setCurrentPage("categories")} className="text-center cursor-pointer text-white text-lg hover:text-[#34d399] hover:underline transition-all duration-200">
               Browse Categories
             </p>
-            <p
-              onClick={() => setCurrentPage("leaderboard")}
-              className="text-center cursor-pointer text-white text-lg hover:text-[#34d399] hover:underline transition-all duration-200"
-            >
+            <p onClick={() => setCurrentPage("leaderboard")} className="text-center cursor-pointer text-white text-lg hover:text-[#34d399] hover:underline transition-all duration-200">
               Leaderboard
             </p>
-                      
-                       <div className="flex justify-center">
-             <Link
-               to="/"
-               className="text-center cursor-pointer text-white text-lg hover:text-[#34d399] hover:underline transition-all duration-200"
-             >
-               Home
-             </Link>
-             </div>
+            <div className="flex justify-center">
+              <Link to="/" className="text-center cursor-pointer text-white text-lg hover:text-[#34d399] hover:underline transition-all duration-200">
+                Home
+              </Link>
+            </div>
           </nav>
         </div>
         <div className="mt-10">
@@ -195,7 +186,7 @@ const AdminDashboard = () => {
         </div>
       </aside>
 
-      <div className="flex-1 p-10 overflow-auto">
+      <div className="flex-1 p-6 md:p-10 overflow-auto">
         <header className="flex justify-between items-center mb-10 bg-white rounded-xl p-6 shadow-sm border">
           <h1 className="text-2xl font-bold text-gray-800">Welcome to Your Admin Dashboard!</h1>
           <div className="flex items-center space-x-4">
@@ -204,7 +195,7 @@ const AdminDashboard = () => {
           </div>
         </header>
 
-        <main className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-2xl p-6 shadow-md border">
             <h2 className="text-xl font-semibold text-[#6a5acd] mb-4">Users</h2>
             <p className="text-2xl">{userCount}</p>
@@ -265,7 +256,6 @@ const AdminDashboard = () => {
 
         {currentPage === "manage-users" && <ManageUsers />}
         {currentPage === "manage-quizzes" && <ManageQuizzes />}
-      
         {currentPage === "categories" && <Categories />}
         {currentPage === "leaderboard" && <Leaderboard />}
         {currentPage === "profile" && <Profile />}
