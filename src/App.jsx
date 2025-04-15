@@ -9,7 +9,7 @@ import AdminDashboard from './components/AdminDashboard';
 import InstructorDashboard from './components/InstructorDashboard';
 import UserDashboard from './components/UserDashboard';
 import Login from "./components/Login";
-import Signup from "./components/SignUp";
+import Signup from "./components/Signup";
 import QuizForm from "./components/QuizForm";
 import QuizzesPage from "./components/QuizzesPage";
 import QuizList from "./components/QuizList";
