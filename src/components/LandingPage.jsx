@@ -37,7 +37,7 @@ const LandingPage = () => {
             >
               <img
                 src={`/${category.toLowerCase()}.jpg`} 
-                onError={(e) => { e.target.src = "/default.webp"; }}
+                onError={(e) => { e.target.src = "/history.avif"; }}
                 alt={`${category} Quiz`}
                 className="w-full h-48 object-cover transition-all duration-300 transform hover:scale-105"
               />
